@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="GBK"?>
+<Container>
+  <component name="Field" displayName="文本控件" type="String" group="field" descript="创建一个文本控件" iconSmall="icons/field_textfield.png" iconLarge="icons/field_textfield.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="controlType"          defaultValue="TextField" type="list" values="TextField;Password;Email"/>
+    <property group="General" name="lineBR"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="1"/>
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="下拉列表" type="Select" group="field" descript="创建一个下拉列表控件" iconSmall="icons/field_select.png" iconLarge="icons/field_select.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="data"                 defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="1"/>
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="级联下拉列表" type="CascadeSelect" group="field" descript="创建级联下拉列表" iconSmall="icons/field_cascadeselect.png" iconLarge="icons/field_cascadeselect.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="data"                 defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="1"/>
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="复选按钮组" type="Check" group="field" descript="创建一个复选框控件" iconSmall="icons/field_check.png" iconLarge="icons/field_check.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="data"                 defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true" type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="单选按钮组" type="Radio" group="field" descript="创建一个单选控件" iconSmall="icons/field_radio.png" iconLarge="icons/field_radio.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="data"                 defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true" type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="日期控件" type="Calendar" group="field" descript="创建一个日期控件" iconSmall="icons/field_date.png" iconLarge="icons/field_date.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="1"/>
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="文本区域" type="Detail" group="field" descript="创建一个文本区域" iconSmall="icons/field_textarea.gif" iconLarge="icons/field_textarea.gif" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="富文本区域" type="Editor" group="field" descript="创建一个富文本区域" iconSmall="icons/field_editor.png" iconLarge="icons/field_editor.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="附件" type="File" group="field" descript="创建一个附件控件" iconSmall="icons/field_attachment.gif" iconLarge="icons/field_attachment.gif" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="人员选择" type="PersonSelect" group="field" descript="创建一个人员选择控件" iconSmall="icons/field_user.png" iconLarge="icons/field_user.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="部门选择" type="DepartmentSelect" group="field" descript="创建一个部门选择控件" iconSmall="icons/field_department.png" iconLarge="icons/field_department.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="人员部门选择" type="PersonOrgSelect" group="field" descript="创建一个人员部门选择控件" iconSmall="icons/field_department.png" iconLarge="icons/field_department.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="表格控件" type="table" group="field" descript="创建一个表格控件" iconSmall="icons/field_table.png" iconLarge="icons/field_table.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+  
+  <component name="Field" displayName="选择树" type="tree" group="field" descript="创建一个选择树控件" iconSmall="icons/field_tree.png" iconLarge="icons/field_tree.png" visible="true" >
+    <property group="General" name="name"/>
+    <property group="General" name="displayName"/>
+    <property group="General" name="dataURL"/>
+    <property group="General" name="defaultValue"         defaultValue=""/>
+    <property group="General" name="lineBR"               defaultValue="true"  type="list" values="true;false" />
+    <property group="General" name="placeholder"          defaultValue="2"/>    
+    <property group="General" name="isHref"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="readonly"             defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isNeed"               defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="isKey"                defaultValue="false" type="list" values="true;false" />
+    <property group="General" name="visible"              defaultValue="true"  type="list" values="true;false" />
+  </component>
+</Container>

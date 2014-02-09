@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            class="org.snaker.designer.SnakerFlowDesignerEditor"
+            contributorClass="org.snaker.designer.SnakerDesignerEditorActionBarContributor"
+            default="true"
+            extensions="snaker"
+            icon="icons/designer.png"
+            id="org.snaker.designer.SnakerFlowDesignerEditor"
+            name="SnakerFlow">
+      </editor>
+      <editor
+            class="org.snaker.designer.SnakerFormDesignerEditor"
+            contributorClass="org.snaker.designer.SnakerDesignerEditorActionBarContributor"
+            default="true"
+            extensions="snakerform"
+            icon="icons/form.png"
+            id="org.snaker.designer.SnakerFormDesignerEditor"
+            name="SnakerForm">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            name="Snaker"
+            id="org.snaker.designer.wizard">
+      </category>
+      <wizard
+            name="Snaker Project"
+            icon="icons/project.gif"
+            category="org.snaker.designer.wizard"
+            class="org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard"
+            preferredPerspectives="org.snaker.designer.ui.Perspective"
+            project="true"
+            finalPerspective="org.snaker.designer.ui.Perspective"
+            id="org.snaker.designer.ui.NetforceProjectWizard">
+         <description>
+            Create a Snaker project
+         </description>
+      </wizard>
+      <wizard
+            name="Snaker Process File"
+            icon="icons/designer.png"
+            category="org.snaker.designer.wizard"
+            class="org.snaker.designer.wizards.NewProcessWizard"
+            id="org.snaker.designer.wizards.NewProcessWizard">
+          <description>
+            Create a Snaker Process File
+         </description>
+      </wizard>
+      <wizard
+            name="Snaker Form File"
+            icon="icons/form.png"
+            category="org.snaker.designer.wizard"
+            class="org.snaker.designer.wizards.NewFormWizard"
+            id="org.snaker.designer.wizards.NewFormWizard">
+          <description>
+            Create a Snaker Form File
+         </description>
+      </wizard>
+   </extension>
+</plugin>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="GBK"?>
+<Container>
+  <component name="Process" displayName="process">
+    <property group="General" name="name"                 defaultValue=""/>
+    <property group="General" name="displayName"          defaultValue=""/>
+    <property group="General" name="expireTime"           defaultValue=""/>
+    <property group="General" name="instanceUrl"          defaultValue=""/>
+    <property group="General" name="instanceNoClass"      defaultValue=""/>
+  </component>
+  
+  <component name="Transition" displayName="transition" descript="创建连接" iconSmall="icons/flow_sequence.png" iconLarge="icons/flow_sequence.png" visible="true">
+    <property group="General" name="name"                 defaultValue="transition"/>
+    <property group="General" name="displayName"          defaultValue="transition"/>
+    <property group="General" name="expr"                 defaultValue=""/>
+  </component>
+  
+  <component name="Start" displayName="start" group="process" descript="创建启动节点" iconSmall="icons/16/start_event_empty.png" iconLarge="icons/32/start_event_empty.png" visible="true">
+    <property group="General" name="name"                 defaultValue="start"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>
+  </component>
+  
+  <component name="End" displayName="end" group="process" descript="创建结束节点" iconSmall="icons/16/end_event_terminate.png" iconLarge="icons/32/end_event_terminate.png" visible="true">
+    <property group="General" name="name"                 defaultValue="end"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>    
+  </component>
+  
+  <component name="Task" displayName="task" group="process" descript="创建任务节点" iconSmall="icons/16/task_empty.png" iconLarge="icons/16/task_empty.png" visible="true">
+    <property group="General" name="name"                 defaultValue="newTask"/>
+    <property group="General" name="displayName"          defaultValue="任务节点"/>
+    <property group="General" name="form"          	      defaultValue=""/>
+    <property group="General" name="assignee"          	  defaultValue=""/>
+    <property group="General" name="assignment-handler"   defaultValue=""/>
+    <property group="General" name="expireTime"           defaultValue=""/>
+    <property group="General" name="performType"          defaultValue="ANY" type="list" values="ANY;ALL"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>
+  </component>
+  
+  <component name="Custom" displayName="custom" group="process" descript="创建自定义节点" iconSmall="icons/16/task_empty.png" iconLarge="icons/16/task_empty.png" visible="true">
+    <property group="General" name="name"                 defaultValue="newTask"/>
+    <property group="General" name="displayName"          defaultValue="自定义节点"/>
+    <property group="General" name="clazz"/>
+    <property group="General" name="methodName"/>
+    <property group="General" name="args"/>
+    <property group="General" name="var"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>
+  </component>
+  
+  <component name="SubProcess" displayName="sub-process" group="process" descript="创建子流程" iconSmall="icons/16/task_empty.png" iconLarge="icons/16/task_empty.png" visible="true">
+    <property group="General" name="name"                 defaultValue="sub-process"/>
+    <property group="General" name="displayName"          defaultValue="子流程"/>
+    <property group="General" name="processName"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>    
+  </component>
+  
+  <component name="Decision" displayName="decision" group="process" descript="创建决策节点" iconSmall="icons/16/gateway_exclusive.png" iconLarge="icons/32/gateway_exclusive.png" visible="true">
+    <property group="General" name="name"                 defaultValue="decision"/>
+    <property group="General" name="expr"                 defaultValue=""/>
+    <property group="General" name="handleClass"          defaultValue=""/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>    
+  </component>
+  
+  <component name="Fork" displayName="fork" group="process" descript="创建分派节点" iconSmall="icons/16/gateway_parallel.png" iconLarge="icons/32/gateway_parallel.png" visible="true">
+    <property group="General" name="name"                 defaultValue="fork"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>    
+  </component>
+  
+  <component name="Join" displayName="join" group="process" descript="创建合并节点" iconSmall="icons/16/gateway_parallel.png" iconLarge="icons/32/gateway_parallel.png" visible="true">
+    <property group="General" name="name"                 defaultValue="join"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>
+  </component>
+  <!-- 
+  <component name="Sql" displayName="sql" group="process" descript="创建Sql节点" iconSmall="icons/16/task_empty.png" iconLarge="icons/16/task_empty.png" visible="true">
+    <property group="General" name="name"                 defaultValue="sql"/>
+    <property group="General" name="sql"/>
+    <property group="General" name="preInterceptors"/>
+    <property group="General" name="postInterceptors"/>
+  </component>
+   -->
+</Container>
