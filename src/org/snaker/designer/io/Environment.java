@@ -67,7 +67,7 @@ public class Environment {
 	public static final String ATTR_HANDLE = "handleClass";
 	public static final String ATTR_FORM = "form";
 	public static final String ATTR_ASSIGNEE = "assignee";
-	public static final String ATTR_ASSIGNEMENT_HANDLER = "assignment-handler";
+	public static final String ATTR_ASSIGNEMENT_HANDLER = "assignmentHandler";
 	public static final String ATTR_PERFORMTYPE = "performType";
 	public static final String ATTR_TO = "to";
 	public static final String ATTR_G = "g";

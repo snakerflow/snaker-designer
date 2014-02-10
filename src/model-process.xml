@@ -31,7 +31,7 @@
     <property group="General" name="displayName"          defaultValue="任务节点"/>
     <property group="General" name="form"          	      defaultValue=""/>
     <property group="General" name="assignee"          	  defaultValue=""/>
-    <property group="General" name="assignment-handler"   defaultValue=""/>
+    <property group="General" name="assignmentHandler"    defaultValue=""/>
     <property group="General" name="expireTime"           defaultValue=""/>
     <property group="General" name="performType"          defaultValue="ANY" type="list" values="ANY;ALL"/>
     <property group="General" name="preInterceptors"/>
