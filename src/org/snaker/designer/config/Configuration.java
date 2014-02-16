@@ -14,6 +14,8 @@
  */
 package org.snaker.designer.config;
 
+import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -22,6 +24,10 @@ import java.util.List;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.snaker.designer.Activator;
+import org.snaker.designer.preferences.SnakerPreferencePage;
+import org.snaker.designer.utils.StringUtils;
 
 /**
  * 单态实例操作model.xml配置文件
@@ -37,26 +43,45 @@ public class Configuration {
 	private List<Component> components = new ArrayList<Component>();
 
 	private Configuration() {
-		load(MODEL_PROCESS);
-		load(MODEL_FORM);
+		refresh();
 	}
 
 	public static Configuration getInstance() {
 		return configuration;
+	}
+	
+	public void refresh() {
+		components.clear();
+		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
+		String model_process = store.getString(SnakerPreferencePage.MODEL_PROCESS);
+		String model_form = store.getString(SnakerPreferencePage.MODEL_FORM);
+		load(getResource(model_process, MODEL_PROCESS));
+		load(getResource(model_form, MODEL_FORM));
+	}
+	
+	public URL getResource(String filePath, String defaultPath) {
+		URL url = null;
+		if(StringUtils.isEmpty(filePath)) {
+	        ClassLoader threadContextClassLoader = Thread.currentThread().getContextClassLoader();
+	        if (threadContextClassLoader != null) {
+	            url = threadContextClassLoader.getResource(defaultPath);
+	        }
+		} else {
+			try {
+				url = new File(filePath).toURI().toURL();
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}
+		return url;
 	}
 
 	/**
 	 * 组装对象Component
 	 */
 	@SuppressWarnings("unchecked")
-	public void load(String fileName) {
+	public void load(URL url) {
 		try {
-	        URL url = null;
-	        
-	        ClassLoader threadContextClassLoader = Thread.currentThread().getContextClassLoader();
-	        if (threadContextClassLoader != null) {
-	            url = threadContextClassLoader.getResource(fileName);
-	        }
 			SAXReader reader = new SAXReader();
 			Document document = reader.read(url);
 			Element root = document.getRootElement();
