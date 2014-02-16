@@ -61,4 +61,20 @@
          </description>
       </wizard>
    </extension>
+   
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Snaker Designer"
+            class="org.snaker.designer.preferences.SnakerPreferencePage"
+            id="org.snaker.designer.preferences.SnakerPreferencePage">
+      </page>
+   </extension>
+   
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="org.snaker.designer.preferences.PreferenceInitializer">
+      </initializer>
+   </extension>
 </plugin>

@@ -22,3 +22,5 @@ Bundle-ClassPath: .,
  lib/dom4j-1.6.1.jar
 DynamicImport-Package: *
 Export-Package: org.snaker.designer
+Bundle-Activator: org.snaker.designer.Activator
+Bundle-ActivationPolicy: lazy

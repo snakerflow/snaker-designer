@@ -25,18 +25,18 @@ public class Activator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "org.snaker.designer.Activator";
 	private static Activator plugin;
 	
-	public Activator() {}
+	public Activator() {
+		plugin = this;
+	}
 	
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
-		System.out.println("Snaker start......");
 	}
 
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);
-		System.out.println("Snaker stop......");
 	}
 	/**
 	 * Returns the shared instance
