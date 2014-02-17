@@ -43,7 +43,10 @@ public class SnakerPreferencePage extends FieldEditorPreferencePage implements
 
 	@Override
 	protected void createFieldEditors() {
-		addField(new FileFieldEditor(MODEL_PROCESS, "流程模型配置", getFieldEditorParent()));
+		FileFieldEditor editor = new FileFieldEditor(MODEL_PROCESS, "流程模型配置", getFieldEditorParent());
+		editor.setEmptyStringAllowed(true);
+		editor.setFileExtensions(new String[]{"*.xml"});
+		addField(editor);
 	}
 	@Override
 	public boolean performOk() {
