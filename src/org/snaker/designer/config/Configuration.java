@@ -43,14 +43,18 @@ public class Configuration {
 	private List<Component> components = new ArrayList<Component>();
 
 	private Configuration() {
-		refresh();
+		try {
+			refresh();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static Configuration getInstance() {
 		return configuration;
 	}
 	
-	public void refresh() {
+	public void refresh() throws Exception {
 		components.clear();
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		String model_process = store.getString(SnakerPreferencePage.MODEL_PROCESS);
@@ -73,6 +77,7 @@ public class Configuration {
 				e.printStackTrace();
 			}
 		}
+		if(url == null) throw new NullPointerException("根据配置的路径无法获取文件资源.请检查配置是否正确.");
 		return url;
 	}
 
@@ -80,43 +85,39 @@ public class Configuration {
 	 * 组装对象Component
 	 */
 	@SuppressWarnings("unchecked")
-	public void load(URL url) {
-		try {
-			SAXReader reader = new SAXReader();
-			Document document = reader.read(url);
-			Element root = document.getRootElement();
-			Iterator<Element> iter = root.elementIterator("component");
-			while (iter.hasNext()) {
-				Element comp = (Element) iter.next();
-				Component component = new Component();
-				component.setName(comp.attributeValue("name"));
-				component.setDisplayName(comp.attributeValue("displayName"));
-				component.setDescript(comp.attributeValue("descript"));
-				component.setGroup(comp.attributeValue("group"));
-				component.setType(comp.attributeValue("type"));
-				component.setVisible(comp.attributeValue("visible"));
-				component.setIconSmall(comp.attributeValue("iconSmall"));
-				component.setIconLarge(comp.attributeValue("iconLarge"));
-				component.setClazz(comp.attributeValue("class"));
+	public void load(URL url) throws Exception {
+		SAXReader reader = new SAXReader();
+		Document document = reader.read(url);
+		Element root = document.getRootElement();
+		Iterator<Element> iter = root.elementIterator("component");
+		while (iter.hasNext()) {
+			Element comp = (Element) iter.next();
+			Component component = new Component();
+			component.setName(comp.attributeValue("name"));
+			component.setDisplayName(comp.attributeValue("displayName"));
+			component.setDescript(comp.attributeValue("descript"));
+			component.setGroup(comp.attributeValue("group"));
+			component.setType(comp.attributeValue("type"));
+			component.setVisible(comp.attributeValue("visible"));
+			component.setIconSmall(comp.attributeValue("iconSmall"));
+			component.setIconLarge(comp.attributeValue("iconLarge"));
+			component.setClazz(comp.attributeValue("class"));
 
-				Iterator<Element> itattrs = comp.elementIterator("property");
-				while (itattrs.hasNext()) {
-					Element ep = (Element) itattrs.next();
-					Property prop = new Property();
-					prop.setName(ep.attributeValue("name"));
-					prop.setType(ep.attributeValue("type"));
-					prop.setDefaultValue(ep.attributeValue("defaultValue"));
-					prop.setValidator(ep.attributeValue("validator"));
-					prop.setValues(ep.attributeValue("values"));
-					prop.setVisible(ep.attributeValue("visible"));
-					prop.setGroup(ep.attributeValue("group"));
+			Iterator<Element> itattrs = comp.elementIterator("property");
+			while (itattrs.hasNext()) {
+				Element ep = (Element) itattrs.next();
+				Property prop = new Property();
+				prop.setName(ep.attributeValue("name"));
+				prop.setType(ep.attributeValue("type"));
+				prop.setDefaultValue(ep.attributeValue("defaultValue"));
+				prop.setValidator(ep.attributeValue("validator"));
+				prop.setValues(ep.attributeValue("values"));
+				prop.setVisible(ep.attributeValue("visible"));
+				prop.setGroup(ep.attributeValue("group"));
 
-					component.getProperties().add(prop);
-				}
-				components.add(component);
+				component.getProperties().add(prop);
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
+			components.add(component);
 		}
 	}
 

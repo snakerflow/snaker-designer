@@ -51,12 +51,21 @@ public class SnakerPreferencePage extends FieldEditorPreferencePage implements
 	@Override
 	public boolean performOk() {
 		super.performOk();
-		Configuration.getInstance().refresh();
+		try {
+			Configuration.getInstance().refresh();
+		} catch (Exception e) {
+			setErrorMessage("根据配置的路径无法获取文件资源.请检查配置是否正确.");
+			return false;
+		}
 		return true;
 	}
 	@Override
 	protected void performApply() {
 		super.performApply();
-		Configuration.getInstance().refresh();
+		try {
+			Configuration.getInstance().refresh();
+		} catch (Exception e) {
+			setErrorMessage("根据配置的路径无法获取文件资源.请检查配置是否正确.");
+		}
 	}
 }
