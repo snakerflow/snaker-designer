@@ -17,7 +17,6 @@ package org.snaker.designer.io.reader.impl;
 import java.util.List;
 
 import org.snaker.designer.io.Environment;
-import org.snaker.designer.io.reader.AbstractXmlReader;
 import org.snaker.designer.io.reader.XmlReader;
 import org.snaker.designer.model.BaseElement;
 import org.snaker.designer.model.Field;
@@ -30,18 +29,14 @@ import org.w3c.dom.Element;
  * @author yuqs
  * @version 1.0
  */
-public class TaskReader extends AbstractXmlReader {
+public class TaskReader extends SimpleReader {
 	/**
 	 * 由于任务节点需要解析form、assignee属性，这里覆盖抽象类方法实现
 	 */
 	@Override
 	protected void parseNode(BaseElement node, Element element) {
+		super.parseNode(node, element);
 		Task task = (Task)node;
-		task.setForm(element.getAttribute(Environment.ATTR_FORM));
-		task.setAssignee(element.getAttribute(Environment.ATTR_ASSIGNEE));
-		task.setExpireTime(element.getAttribute(Environment.ATTR_EXPIRETIME));
-		task.setPerformType(element.getAttribute(Environment.ATTR_PERFORMTYPE));
-		task.setAssignmentHandler(element.getAttribute(Environment.ATTR_ASSIGNEMENT_HANDLER));
 		List<Element> fields = XmlUtils.elements(element, Environment.FORM_FIELD);
 		XmlReader reader = Environment.getReader(Environment.FORM_FIELD);
 		for(Element fieldE : fields) {

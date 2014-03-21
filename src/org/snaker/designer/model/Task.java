@@ -60,6 +60,22 @@ public class Task extends NodeElement
 	 */
 	private String expireTime;
 	/**
+	 * 提醒时间
+	 */
+	private String reminderTime;
+	/**
+	 * 提醒次数
+	 */
+	private String reminderRepeat;
+	/**
+	 * 是否自动执行
+	 */
+	private String autoExecute = "Y";
+	/**
+	 * 任务执行后回调方法
+	 */
+	private String action;
+	/**
 	 * 任务可包含表单的字段
 	 */
 	private List<Field> fields = new ArrayList<Field>();
@@ -143,5 +159,37 @@ public class Task extends NodeElement
 	public void setAssignmentHandler(String assignmentHandler) {
 		this.assignmentHandler = assignmentHandler;
 		firePropertyChange(PROP_ASSIGNEMENT_HANDLER, null, assignmentHandler);
+	}
+
+	public String getReminderTime() {
+		return reminderTime;
+	}
+
+	public void setReminderTime(String reminderTime) {
+		this.reminderTime = reminderTime;
+	}
+
+	public String getReminderRepeat() {
+		return reminderRepeat;
+	}
+
+	public void setReminderRepeat(String reminderRepeat) {
+		this.reminderRepeat = reminderRepeat;
+	}
+
+	public String getAutoExecute() {
+		return autoExecute;
+	}
+
+	public void setAutoExecute(String autoExecute) {
+		this.autoExecute = autoExecute;
+	}
+
+	public String getAction() {
+		return action;
+	}
+
+	public void setAction(String action) {
+		this.action = action;
 	}
 }

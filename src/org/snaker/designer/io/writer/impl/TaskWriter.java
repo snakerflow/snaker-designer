@@ -15,12 +15,10 @@
 package org.snaker.designer.io.writer.impl;
 
 import org.snaker.designer.io.Environment;
-import org.snaker.designer.io.writer.AbstractXmlWriter;
 import org.snaker.designer.io.writer.XmlWriter;
 import org.snaker.designer.model.BaseElement;
 import org.snaker.designer.model.Field;
 import org.snaker.designer.model.Task;
-import org.snaker.designer.utils.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -29,27 +27,7 @@ import org.w3c.dom.Element;
  * @author yuqs
  * @version 1.0
  */
-public class TaskWriter extends AbstractXmlWriter {
-	@Override
-	protected void addAttributes(BaseElement model, Element element) {
-		Task task = (Task)model;
-		if(StringUtils.isNotEmpty(task.getAssignee())) {
-			element.setAttribute(Environment.ATTR_ASSIGNEE, task.getAssignee());
-		}
-		if(StringUtils.isNotEmpty(task.getForm())) {
-			element.setAttribute(Environment.ATTR_FORM, task.getForm());
-		}
-		if(StringUtils.isNotEmpty(task.getExpireTime())) {
-			element.setAttribute(Environment.ATTR_EXPIRETIME, task.getExpireTime());
-		}
-		if(StringUtils.isNotEmpty(task.getPerformType())) {
-			element.setAttribute(Environment.ATTR_PERFORMTYPE, task.getPerformType());
-		}
-		if(StringUtils.isNotEmpty(task.getAssignmentHandler())) {
-			element.setAttribute(Environment.ATTR_ASSIGNEMENT_HANDLER, task.getAssignmentHandler());
-		}
-	}
-
+public class TaskWriter extends SimpleWriter {
 	@Override
 	protected void addChildNodes(BaseElement model, Document doc, Element element) {
 		Task task = (Task)model;
