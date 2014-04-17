@@ -74,7 +74,7 @@ public class Task extends NodeElement
 	/**
 	 * 任务执行后回调方法
 	 */
-	private String action;
+	private String callback;
 	/**
 	 * 任务可包含表单的字段
 	 */
@@ -185,11 +185,11 @@ public class Task extends NodeElement
 		this.autoExecute = autoExecute;
 	}
 
-	public String getAction() {
-		return action;
+	public String getCallback() {
+		return callback;
 	}
 
-	public void setAction(String action) {
-		this.action = action;
+	public void setCallback(String callback) {
+		this.callback = callback;
 	}
 }
