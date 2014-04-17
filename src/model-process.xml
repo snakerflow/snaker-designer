@@ -39,7 +39,7 @@
     <property group="Timer"   name="reminderRepeat"/>
     <property group="Timer"   name="expireTime"/>
     <property group="Timer"   name="autoExecute"          defaultValue="N" type="list" values="N;Y"/>
-    <property group="Timer"   name="action"/>    
+    <property group="Timer"   name="callback"/>    
   </component>
   
   <component name="Custom" displayName="custom" group="process" descript="创建自定义节点" iconSmall="icons/16/task_empty.png" iconLarge="icons/16/task_empty.png" visible="true">
