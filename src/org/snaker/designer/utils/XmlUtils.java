@@ -15,6 +15,7 @@
 package org.snaker.designer.utils;
 
 import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,10 +98,10 @@ public class XmlUtils {
 		TransformerFactory tf = TransformerFactory.newInstance();  
 		Transformer transformer = tf.newTransformer();  
 		DOMSource source = new DOMSource(doc);  
-		transformer.setOutputProperty(OutputKeys.ENCODING, "GBK");  
+		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");  
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-		PrintWriter pw = new PrintWriter(new FileOutputStream(file));  
-		StreamResult result = new StreamResult(pw);  
-		transformer.transform(source, result);  
+		PrintWriter pw = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
+		StreamResult result = new StreamResult(pw);
+		transformer.transform(source, result);
 	}
 }
